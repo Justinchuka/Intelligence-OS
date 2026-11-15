@@ -1,0 +1,5 @@
+{"at": "2026-11-14T22:45:44+00:00", "kind": "config_change", "detail": "initial configuration", "actor": "owner"}
+{"at": "2026-11-14T22:45:44+00:00", "kind": "config_change", "detail": "add module competitor-intelligence", "actor": "owner"}
+{"at": "2026-11-14T22:45:44+00:00", "kind": "config_change", "detail": "add module pricing-intelligence", "actor": "owner"}
+{"at": "2026-11-14T22:45:44+00:00", "kind": "config_change", "detail": "add module business-performance-tracker", "actor": "owner"}
+{"at": "2026-11-14T22:45:44+00:00", "kind": "config_change", "detail": "add source example-competitor-site", "actor": "owner"}

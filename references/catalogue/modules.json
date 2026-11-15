@@ -1,0 +1,5036 @@
+{
+ "schema": "intelligence-os/catalogue/1",
+ "version": "1.0.0",
+ "modules": [
+  {
+   "id": "job-finder",
+   "name": "Job Finder",
+   "category": "Opportunities & Careers",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find current roles that fit the owner's skills, seniority and location or remote preferences.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "role",
+     "type": "string"
+    },
+    {
+     "name": "employer",
+     "type": "string"
+    },
+    {
+     "name": "location_remote",
+     "type": "string"
+    },
+    {
+     "name": "posted_at",
+     "type": "string"
+    },
+    {
+     "name": "salary_if_disclosed",
+     "type": "string"
+    },
+    {
+     "name": "requirements",
+     "type": "string"
+    },
+    {
+     "name": "seniority",
+     "type": "string"
+    },
+    {
+     "name": "eligibility",
+     "type": "string"
+    },
+    {
+     "name": "application_deadline",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "job boards",
+     "employer career pages",
+     "startup hiring signals",
+     "recently funded-company hiring pages"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Screen by role fit, location/remote status and seniority; open the employer's own page to confirm the listing is live; compare requirements with approved profile fields only if permitted; label stale, expired, uncertain or unverified listings.",
+   "analysis_framework": null,
+   "limitations": "Cannot confirm a role is still open beyond the check made; salary is often undisclosed; some boards block automated access."
+  },
+  {
+   "id": "freelance-contract-opportunities",
+   "name": "Freelance & Contract Opportunities",
+   "category": "Opportunities & Careers",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find freelance, contract and gig opportunities matching the owner's skills and availability.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "title",
+     "type": "string"
+    },
+    {
+     "name": "client_or_platform",
+     "type": "string"
+    },
+    {
+     "name": "scope",
+     "type": "string"
+    },
+    {
+     "name": "rate_or_budget_if_disclosed",
+     "type": "string"
+    },
+    {
+     "name": "duration",
+     "type": "string"
+    },
+    {
+     "name": "skills_required",
+     "type": "string"
+    },
+    {
+     "name": "posted_at",
+     "type": "string"
+    },
+    {
+     "name": "proposal_deadline",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "freelance marketplaces",
+     "contract job boards",
+     "company project calls",
+     "professional communities"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Screen by skill match, rate transparency and client credibility signals; flag unclear scope or advance-fee requests as risks; verify the posting is open.",
+   "analysis_framework": null,
+   "limitations": "Client legitimacy cannot be fully verified; rates are often not disclosed."
+  },
+  {
+   "id": "internship-finder",
+   "name": "Internship Finder",
+   "category": "Opportunities & Careers",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find internships fitting the owner's field, level and location.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "title",
+     "type": "string"
+    },
+    {
+     "name": "organisation",
+     "type": "string"
+    },
+    {
+     "name": "paid_status_if_disclosed",
+     "type": "string"
+    },
+    {
+     "name": "location_remote",
+     "type": "string"
+    },
+    {
+     "name": "start_date",
+     "type": "string"
+    },
+    {
+     "name": "eligibility",
+     "type": "string"
+    },
+    {
+     "name": "application_deadline",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "employer internship pages",
+     "university career portals",
+     "internship boards",
+     "programme directories"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Screen by field, eligibility (student status, year, nationality) and dates; confirm on the organisation's page; flag unpaid status and eligibility limits explicitly.",
+   "analysis_framework": null,
+   "limitations": "Eligibility wording can be ambiguous; closing dates change."
+  },
+  {
+   "id": "apprenticeship-finder",
+   "name": "Apprenticeship Finder",
+   "category": "Opportunities & Careers",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find apprenticeship and trainee programmes with clear entry requirements and pathways.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "programme",
+     "type": "string"
+    },
+    {
+     "name": "employer",
+     "type": "string"
+    },
+    {
+     "name": "trade_or_field",
+     "type": "string"
+    },
+    {
+     "name": "qualification_awarded",
+     "type": "string"
+    },
+    {
+     "name": "entry_requirements",
+     "type": "string"
+    },
+    {
+     "name": "stipend_if_disclosed",
+     "type": "string"
+    },
+    {
+     "name": "intake_dates",
+     "type": "string"
+    },
+    {
+     "name": "application_deadline",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "government apprenticeship portals",
+     "employer programme pages",
+     "training-provider listings"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Prefer official portals; verify qualification level and funding claims on the source; record country-specific eligibility.",
+   "analysis_framework": null,
+   "limitations": "Rules differ by country; some programmes are advertised only through intermediaries."
+  },
+  {
+   "id": "scholarship-finder",
+   "name": "Scholarship Finder",
+   "category": "Opportunities & Careers",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find scholarships the owner may qualify for, with eligibility and deadlines checked against the source.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "award",
+     "type": "string"
+    },
+    {
+     "name": "provider",
+     "type": "string"
+    },
+    {
+     "name": "level_of_study",
+     "type": "string"
+    },
+    {
+     "name": "countries_eligible",
+     "type": "string"
+    },
+    {
+     "name": "amount_or_coverage",
+     "type": "string"
+    },
+    {
+     "name": "eligibility_criteria",
+     "type": "string"
+    },
+    {
+     "name": "application_deadline",
+     "type": "string"
+    },
+    {
+     "name": "required_documents",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "scholarship databases",
+     "university funding pages",
+     "government and foundation award pages"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Screen against approved profile fields (level, field, nationality, age) only if permitted; always verify on the provider's own page; mark aggregator-only listings as unverified.",
+   "analysis_framework": null,
+   "limitations": "Aggregators lag behind providers; competitiveness cannot be estimated reliably."
+  },
+  {
+   "id": "fellowship-finder",
+   "name": "Fellowship Finder",
+   "category": "Opportunities & Careers",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find fellowships (research, policy, technology, leadership) matching the owner's background.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "fellowship",
+     "type": "string"
+    },
+    {
+     "name": "host",
+     "type": "string"
+    },
+    {
+     "name": "focus_area",
+     "type": "string"
+    },
+    {
+     "name": "stipend_if_disclosed",
+     "type": "string"
+    },
+    {
+     "name": "duration",
+     "type": "string"
+    },
+    {
+     "name": "eligibility",
+     "type": "string"
+    },
+    {
+     "name": "selection_process",
+     "type": "string"
+    },
+    {
+     "name": "application_deadline",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "foundation and institute fellowship pages",
+     "university programmes",
+     "professional-body announcements"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Confirm eligibility and selection criteria on the host page; note commitments (location, duration); label unclear terms.",
+   "analysis_framework": null,
+   "limitations": "Funding and terms often change by cycle; prior cycle info may be outdated."
+  },
+  {
+   "id": "volunteer-opportunities",
+   "name": "Volunteer Opportunities",
+   "category": "Opportunities & Careers",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find volunteering roles that match the owner's interests, skills and availability.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "role",
+     "type": "string"
+    },
+    {
+     "name": "organisation",
+     "type": "string"
+    },
+    {
+     "name": "cause",
+     "type": "string"
+    },
+    {
+     "name": "time_commitment",
+     "type": "string"
+    },
+    {
+     "name": "location_remote",
+     "type": "string"
+    },
+    {
+     "name": "skills_needed",
+     "type": "string"
+    },
+    {
+     "name": "start_date",
+     "type": "string"
+    },
+    {
+     "name": "contact_route",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "non-profit sites",
+     "volunteer platforms",
+     "community and civic organisation pages"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Verify the organisation exists and the role is current; note commitment and any fees (flag paid-to-volunteer schemes as a risk).",
+   "analysis_framework": null,
+   "limitations": "Organisation legitimacy checks are limited to public information."
+  },
+  {
+   "id": "hackathon-finder",
+   "name": "Hackathon Finder",
+   "category": "Opportunities & Careers",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find hackathons and build competitions by theme, format and prize.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "event",
+     "type": "string"
+    },
+    {
+     "name": "organiser",
+     "type": "string"
+    },
+    {
+     "name": "theme",
+     "type": "string"
+    },
+    {
+     "name": "format_online_in_person",
+     "type": "string"
+    },
+    {
+     "name": "dates",
+     "type": "string"
+    },
+    {
+     "name": "prizes_if_disclosed",
+     "type": "string"
+    },
+    {
+     "name": "eligibility",
+     "type": "string"
+    },
+    {
+     "name": "registration_deadline",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "hackathon platforms",
+     "developer community pages",
+     "sponsor announcements"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Confirm dates and rules on the organiser's page; separate announced prizes from claimed ones; flag unclear IP terms.",
+   "analysis_framework": null,
+   "limitations": "Prize payouts and judging cannot be verified."
+  },
+  {
+   "id": "research-openings",
+   "name": "Research Openings",
+   "category": "Opportunities & Careers",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find research positions, studentships and calls aligned with the owner's research interests.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "position",
+     "type": "string"
+    },
+    {
+     "name": "institution",
+     "type": "string"
+    },
+    {
+     "name": "field",
+     "type": "string"
+    },
+    {
+     "name": "funding_status",
+     "type": "string"
+    },
+    {
+     "name": "supervisor_or_lab",
+     "type": "string"
+    },
+    {
+     "name": "requirements",
+     "type": "string"
+    },
+    {
+     "name": "application_deadline",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "university vacancy pages",
+     "research institute sites",
+     "academic job boards",
+     "lab pages"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Prefer institution pages; record funding status explicitly; match to research interests supplied by the owner.",
+   "analysis_framework": null,
+   "limitations": "Funding may be conditional; lab pages are often stale."
+  },
+  {
+   "id": "career-path-intelligence",
+   "name": "Career Path Intelligence",
+   "category": "Opportunities & Careers",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Map plausible career paths from the owner's background: roles, skills, typical transitions and market signals.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "path",
+     "type": "string"
+    },
+    {
+     "name": "target_role",
+     "type": "string"
+    },
+    {
+     "name": "required_skills",
+     "type": "string"
+    },
+    {
+     "name": "typical_entry_routes",
+     "type": "string"
+    },
+    {
+     "name": "demand_signals",
+     "type": "string"
+    },
+    {
+     "name": "compensation_range_with_source",
+     "type": "string"
+    },
+    {
+     "name": "evidence_notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "job market data pages",
+     "professional-body publications",
+     "role descriptions",
+     "salary surveys with disclosed methodology"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Use multiple sources for each claim; separate observed postings from published reports; present paths as options, not predictions.",
+   "analysis_framework": "Use multiple sources for each claim; separate observed postings from published reports; present paths as options, not predictions.",
+   "limitations": "Career outcomes are uncertain; salary data is often self-reported."
+  },
+  {
+   "id": "competitor-intelligence",
+   "name": "Competitor Intelligence",
+   "category": "Business Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track and compare competitors' products, positioning, pricing, hiring and announcements.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "competitor",
+     "type": "string"
+    },
+    {
+     "name": "product_or_feature",
+     "type": "string"
+    },
+    {
+     "name": "positioning",
+     "type": "string"
+    },
+    {
+     "name": "pricing_if_public",
+     "type": "string"
+    },
+    {
+     "name": "change_observed",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "competitor sites",
+     "press and blogs",
+     "product changelogs",
+     "job posts",
+     "review sites",
+     "filings where public"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Maintain a competitor list the owner approves; log changes versus the prior snapshot; separate confirmed changes from rumours; record contradictions.",
+   "analysis_framework": "Maintain a competitor list the owner approves; log changes versus the prior snapshot; separate confirmed changes from rumours; record contradictions.",
+   "limitations": "Cannot see private data; pricing pages may differ by region."
+  },
+  {
+   "id": "customer-pain-point-finder",
+   "name": "Customer Pain-Point Finder",
+   "category": "Business Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find recurring customer complaints and unmet needs in a defined market.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "pain_point",
+     "type": "string"
+    },
+    {
+     "name": "customer_segment",
+     "type": "string"
+    },
+    {
+     "name": "frequency_signal",
+     "type": "string"
+    },
+    {
+     "name": "example_quotes_paraphrased",
+     "type": "string"
+    },
+    {
+     "name": "current_workarounds",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "forums",
+     "communities",
+     "review sites",
+     "support threads",
+     "social posts"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Cluster by theme; report frequency as observed counts of sampled sources, not market prevalence; keep quotes short and paraphrased.",
+   "analysis_framework": null,
+   "limitations": "Samples are self-selected and biased; frequency is not market size."
+  },
+  {
+   "id": "startup-gap-finder",
+   "name": "Startup Gap Finder",
+   "category": "Business Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Identify plausible product or startup opportunities grounded in real pain points, evidence of demand and gaps in existing solutions.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "opportunity",
+     "type": "string"
+    },
+    {
+     "name": "target_user",
+     "type": "string"
+    },
+    {
+     "name": "problem",
+     "type": "string"
+    },
+    {
+     "name": "evidence",
+     "type": "string"
+    },
+    {
+     "name": "existing_solutions",
+     "type": "string"
+    },
+    {
+     "name": "recurring_complaints",
+     "type": "string"
+    },
+    {
+     "name": "demand_signals",
+     "type": "string"
+    },
+    {
+     "name": "potential_market",
+     "type": "string"
+    },
+    {
+     "name": "product_direction",
+     "type": "string"
+    },
+    {
+     "name": "competition_differentiation",
+     "type": "string"
+    },
+    {
+     "name": "source_links",
+     "type": "string"
+    },
+    {
+     "name": "confidence",
+     "type": "string"
+    },
+    {
+     "name": "validation_gaps",
+     "type": "string"
+    },
+    {
+     "name": "recommended_next_steps",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "Reddit",
+     "Google Search",
+     "Y Combinator",
+     "Product Hunt",
+     "G2",
+     "Capterra",
+     "Crunchbase",
+     "Hacker News",
+     "user-selected sources (access verified at run time)"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Investigate products gaining traction, recurring complaints, underserved users, broken workflows, weak alternatives, competitor positioning and emerging business models. Do not assert revenue, MRR, profitability or market size without evidence; distinguish verified figures, reported estimates and unverified claims.",
+   "analysis_framework": null,
+   "limitations": "Demand signals are indirect; market size estimates are low-confidence unless sourced."
+  },
+  {
+   "id": "business-model-intelligence",
+   "name": "Business Model Intelligence",
+   "category": "Business Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Document how comparable businesses make money, with evidence.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "company",
+     "type": "string"
+    },
+    {
+     "name": "model_type",
+     "type": "string"
+    },
+    {
+     "name": "revenue_streams",
+     "type": "string"
+    },
+    {
+     "name": "pricing_structure",
+     "type": "string"
+    },
+    {
+     "name": "cost_drivers",
+     "type": "string"
+    },
+    {
+     "name": "evidence_level",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "company sites",
+     "investor materials",
+     "filings",
+     "credible analyses"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Mark each element as disclosed, reported or inferred; never present inferred economics as fact.",
+   "analysis_framework": "Mark each element as disclosed, reported or inferred; never present inferred economics as fact.",
+   "limitations": "Private company economics are rarely disclosed."
+  },
+  {
+   "id": "customer-review-intelligence",
+   "name": "Customer Review Intelligence",
+   "category": "Business Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Analyse customer reviews of products or services for themes, sentiment and changes over time.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "product",
+     "type": "string"
+    },
+    {
+     "name": "period",
+     "type": "string"
+    },
+    {
+     "name": "review_count_sampled",
+     "type": "string"
+    },
+    {
+     "name": "themes",
+     "type": "string"
+    },
+    {
+     "name": "sentiment_summary",
+     "type": "string"
+    },
+    {
+     "name": "notable_changes",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "review platforms",
+     "app stores",
+     "marketplace listings"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "State sample size and platform; avoid generalising beyond the sample; flag suspected fake-review patterns without asserting fraud.",
+   "analysis_framework": "State sample size and platform; avoid generalising beyond the sample; flag suspected fake-review patterns without asserting fraud.",
+   "limitations": "Platforms limit access; review authenticity is uncertain."
+  },
+  {
+   "id": "pricing-intelligence",
+   "name": "Pricing Intelligence",
+   "category": "Business Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track competitor and market pricing and packaging.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "product",
+     "type": "string"
+    },
+    {
+     "name": "plan",
+     "type": "string"
+    },
+    {
+     "name": "price",
+     "type": "string"
+    },
+    {
+     "name": "currency",
+     "type": "string"
+    },
+    {
+     "name": "billing_period",
+     "type": "string"
+    },
+    {
+     "name": "features_included",
+     "type": "string"
+    },
+    {
+     "name": "region",
+     "type": "string"
+    },
+    {
+     "name": "captured_on",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "public pricing pages",
+     "marketplace listings",
+     "published price lists"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Snapshot with date and region; flag prices needing login or quote; compare like-for-like plans only.",
+   "analysis_framework": null,
+   "limitations": "Dynamic and personalised pricing may not be visible."
+  },
+  {
+   "id": "partnership-opportunities",
+   "name": "Partnership Opportunities",
+   "category": "Business Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find potential partners, distributors and collaborators aligned with the owner's objectives.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "organisation",
+     "type": "string"
+    },
+    {
+     "name": "partnership_type",
+     "type": "string"
+    },
+    {
+     "name": "fit_rationale",
+     "type": "string"
+    },
+    {
+     "name": "contact_route_public",
+     "type": "string"
+    },
+    {
+     "name": "programme_terms_if_public",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "industry directories",
+     "partner programme pages",
+     "event attendee lists",
+     "news"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Verify organisation identity and programme details; do not send outreach (drafts only, owner sends).",
+   "analysis_framework": null,
+   "limitations": "Fit judgments are interpretations; contact information is not collected beyond public routes."
+  },
+  {
+   "id": "supplier-vendor-intelligence",
+   "name": "Supplier & Vendor Intelligence",
+   "category": "Business Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find and compare suppliers and vendors on stated criteria.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "vendor",
+     "type": "string"
+    },
+    {
+     "name": "offering",
+     "type": "string"
+    },
+    {
+     "name": "location",
+     "type": "string"
+    },
+    {
+     "name": "certifications_claimed",
+     "type": "string"
+    },
+    {
+     "name": "pricing_if_public",
+     "type": "string"
+    },
+    {
+     "name": "lead_time_if_stated",
+     "type": "string"
+    },
+    {
+     "name": "reviews_note",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "vendor sites",
+     "marketplaces",
+     "trade directories",
+     "certifications registries"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Separate claimed certifications from registry-verified ones; flag missing evidence; never assert reliability without sources.",
+   "analysis_framework": null,
+   "limitations": "Quality and reliability cannot be verified remotely."
+  },
+  {
+   "id": "business-performance-tracker",
+   "name": "Business Performance Tracker",
+   "category": "Business Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track revenue, costs and operating metrics entered by the owner and analyse performance.",
+   "modes": [
+    "tracking",
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "metric",
+     "type": "string"
+    },
+    {
+     "name": "value",
+     "type": "string"
+    },
+    {
+     "name": "unit_currency",
+     "type": "string"
+    },
+    {
+     "name": "period",
+     "type": "string"
+    },
+    {
+     "name": "category",
+     "type": "string"
+    },
+    {
+     "name": "notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Aggregate by period; compare to prior periods; show data coverage; never infer missing months.",
+   "limitations": "Accuracy depends entirely on entered data; not accounting or tax advice."
+  },
+  {
+   "id": "business-risk-monitor",
+   "name": "Business Risk Monitor",
+   "category": "Business Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Watch for developments that threaten the business: regulatory, supplier, market, reputational, security.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "risk",
+     "type": "string"
+    },
+    {
+     "name": "category",
+     "type": "string"
+    },
+    {
+     "name": "trigger_event",
+     "type": "string"
+    },
+    {
+     "name": "affected_area",
+     "type": "string"
+    },
+    {
+     "name": "severity_assessment_rationale",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    },
+    {
+     "name": "recommended_response",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "news",
+     "regulator pages",
+     "industry bulletins",
+     "supplier announcements"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Rate severity as a labelled judgment with rationale; list sources; separate confirmed events from speculation.",
+   "analysis_framework": "Rate severity as a labelled judgment with rationale; list sources; separate confirmed events from speculation.",
+   "limitations": "Not exhaustive; severity is an interpretation."
+  },
+  {
+   "id": "product-discovery-research",
+   "name": "Product Discovery Research",
+   "category": "Product & Innovation",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Research user problems and market context to inform what to build.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "problem",
+     "type": "string"
+    },
+    {
+     "name": "segment",
+     "type": "string"
+    },
+    {
+     "name": "evidence",
+     "type": "string"
+    },
+    {
+     "name": "current_solutions",
+     "type": "string"
+    },
+    {
+     "name": "opportunity_notes",
+     "type": "string"
+    },
+    {
+     "name": "confidence",
+     "type": "string"
+    },
+    {
+     "name": "validation_gaps",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "communities",
+     "interviews supplied by owner",
+     "review sites",
+     "search trends",
+     "competitor pages"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Triangulate across at least three source types at standard depth; mark hypotheses; propose validation steps.",
+   "analysis_framework": "Triangulate across at least three source types at standard depth; mark hypotheses; propose validation steps.",
+   "limitations": "Cannot replace primary user research."
+  },
+  {
+   "id": "product-launch-monitor",
+   "name": "Product Launch Monitor",
+   "category": "Product & Innovation",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track new product launches in a chosen space.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "product",
+     "type": "string"
+    },
+    {
+     "name": "company",
+     "type": "string"
+    },
+    {
+     "name": "launch_date",
+     "type": "string"
+    },
+    {
+     "name": "category",
+     "type": "string"
+    },
+    {
+     "name": "key_features",
+     "type": "string"
+    },
+    {
+     "name": "pricing_if_public",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "launch platforms",
+     "press",
+     "company blogs",
+     "changelogs"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Log launch dates from the source; dedupe re-announcements; label rumours.",
+   "analysis_framework": null,
+   "limitations": "Coverage depends on sources reachable."
+  },
+  {
+   "id": "feature-gap-finder",
+   "name": "Feature Gap Finder",
+   "category": "Product & Innovation",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Compare product features against alternatives and user requests to find gaps.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "feature",
+     "type": "string"
+    },
+    {
+     "name": "own_product_status",
+     "type": "string"
+    },
+    {
+     "name": "competitors_offering",
+     "type": "string"
+    },
+    {
+     "name": "user_demand_signal",
+     "type": "string"
+    },
+    {
+     "name": "gap_assessment",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "product docs",
+     "pricing pages",
+     "changelogs",
+     "feature-request forums"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Build a feature matrix from sources; mark unknown cells explicitly; interpret gaps as hypotheses.",
+   "analysis_framework": "Build a feature matrix from sources; mark unknown cells explicitly; interpret gaps as hypotheses.",
+   "limitations": "Documentation may lag the real product."
+  },
+  {
+   "id": "ux-research-intelligence",
+   "name": "UX Research Intelligence",
+   "category": "Product & Innovation",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Gather UX patterns, studies and usability findings relevant to the owner's product.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "finding",
+     "type": "string"
+    },
+    {
+     "name": "context",
+     "type": "string"
+    },
+    {
+     "name": "method_described",
+     "type": "string"
+    },
+    {
+     "name": "sample_if_stated",
+     "type": "string"
+    },
+    {
+     "name": "applicability_note",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "UX publications",
+     "research articles",
+     "case studies",
+     "conference talks"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Report method and sample from the source; flag weak evidence; do not generalise beyond the study.",
+   "analysis_framework": "Report method and sample from the source; flag weak evidence; do not generalise beyond the study.",
+   "limitations": "Findings are context-dependent."
+  },
+  {
+   "id": "open-source-project-opportunities",
+   "name": "Open-Source Project Opportunities",
+   "category": "Product & Innovation",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find open-source projects to use, contribute to, or learn from.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "project",
+     "type": "string"
+    },
+    {
+     "name": "language",
+     "type": "string"
+    },
+    {
+     "name": "licence",
+     "type": "string"
+    },
+    {
+     "name": "activity_signals",
+     "type": "string"
+    },
+    {
+     "name": "good_first_issue_signal",
+     "type": "string"
+    },
+    {
+     "name": "maintainer_responsiveness_note",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "code hosting platforms",
+     "project directories",
+     "contributor guides"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Check licence and recent activity on the project page; do not judge code quality without inspection; note governance.",
+   "analysis_framework": null,
+   "limitations": "Activity metrics do not equal health."
+  },
+  {
+   "id": "product-feedback-analysis",
+   "name": "Product Feedback Analysis",
+   "category": "Product & Innovation",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Analyse feedback the owner provides or imports (tickets, surveys, reviews).",
+   "modes": [
+    "tracking",
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "feedback_id",
+     "type": "string"
+    },
+    {
+     "name": "source_channel",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "text",
+     "type": "string"
+    },
+    {
+     "name": "segment",
+     "type": "string"
+    },
+    {
+     "name": "sentiment_tag",
+     "type": "string"
+    },
+    {
+     "name": "theme_tag",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Cluster themes; report counts per theme; quote briefly; never infer from data not supplied.",
+   "limitations": "Only as representative as the supplied sample."
+  },
+  {
+   "id": "innovation-radar",
+   "name": "Innovation Radar",
+   "category": "Product & Innovation",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Scan for emerging ideas, technologies and approaches relevant to the owner's domain.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "signal",
+     "type": "string"
+    },
+    {
+     "name": "domain",
+     "type": "string"
+    },
+    {
+     "name": "maturity_estimate",
+     "type": "string"
+    },
+    {
+     "name": "why_relevant",
+     "type": "string"
+    },
+    {
+     "name": "evidence",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "research feeds",
+     "patent and standards announcements",
+     "startup news",
+     "conference talks"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Label maturity as an estimate with rationale; separate hype from demonstrated adoption.",
+   "analysis_framework": null,
+   "limitations": "Early signals are noisy."
+  },
+  {
+   "id": "product-validation-assistant",
+   "name": "Product Validation Assistant",
+   "category": "Product & Innovation",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Help design and evaluate validation of a product idea using owner-supplied data and discovered evidence.",
+   "modes": [
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "hypothesis",
+     "type": "string"
+    },
+    {
+     "name": "assumption",
+     "type": "string"
+    },
+    {
+     "name": "evidence_for",
+     "type": "string"
+    },
+    {
+     "name": "evidence_against",
+     "type": "string"
+    },
+    {
+     "name": "test_proposed",
+     "type": "string"
+    },
+    {
+     "name": "result",
+     "type": "string"
+    },
+    {
+     "name": "decision",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Structure assumptions; propose cheapest tests; record outcomes honestly; never claim validation without evidence.",
+   "limitations": "Validation needs real-world tests this module cannot run."
+  },
+  {
+   "id": "design-pattern-research",
+   "name": "Design Pattern Research",
+   "category": "Product & Innovation",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Collect design patterns and examples with sources and context of use.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "pattern",
+     "type": "string"
+    },
+    {
+     "name": "problem_solved",
+     "type": "string"
+    },
+    {
+     "name": "example_source",
+     "type": "string"
+    },
+    {
+     "name": "context",
+     "type": "string"
+    },
+    {
+     "name": "pros_cons",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "design systems documentation",
+     "pattern libraries",
+     "case studies"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Cite the source; describe patterns in own words; avoid copying protected assets.",
+   "analysis_framework": null,
+   "limitations": "Pattern fit varies by context."
+  },
+  {
+   "id": "product-roadmap-analyst",
+   "name": "Product Roadmap Analyst",
+   "category": "Product & Innovation",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Analyse a roadmap the owner provides against objectives, evidence and capacity.",
+   "modes": [
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "item",
+     "type": "string"
+    },
+    {
+     "name": "objective_link",
+     "type": "string"
+    },
+    {
+     "name": "evidence_links",
+     "type": "string"
+    },
+    {
+     "name": "effort_estimate_by_owner",
+     "type": "string"
+    },
+    {
+     "name": "dependency",
+     "type": "string"
+    },
+    {
+     "name": "status",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Check each item for objective and evidence links; surface orphans and conflicts; recommendations are suggestions.",
+   "limitations": "Effort and priority inputs come from the owner."
+  },
+  {
+   "id": "ai-developments-monitor",
+   "name": "AI Developments Monitor",
+   "category": "Technology & AI Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track notable AI research, model, policy and product developments.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "development",
+     "type": "string"
+    },
+    {
+     "name": "organisation",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "summary",
+     "type": "string"
+    },
+    {
+     "name": "significance_rationale",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "lab and company blogs",
+     "research repositories",
+     "reputable news",
+     "regulator pages"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Prefer primary announcements; mark claims as reported vs demonstrated; avoid benchmark claims without sources.",
+   "analysis_framework": null,
+   "limitations": "Fast-moving; benchmark comparisons can be misleading."
+  },
+  {
+   "id": "ai-tool-finder",
+   "name": "AI Tool Finder",
+   "category": "Technology & AI Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find AI tools for a stated task and compare them.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "tool",
+     "type": "string"
+    },
+    {
+     "name": "use_case",
+     "type": "string"
+    },
+    {
+     "name": "pricing_if_public",
+     "type": "string"
+    },
+    {
+     "name": "data_handling_notes",
+     "type": "string"
+    },
+    {
+     "name": "integrations",
+     "type": "string"
+    },
+    {
+     "name": "limitations",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "tool directories",
+     "vendor sites",
+     "documentation",
+     "independent reviews"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Verify pricing and terms on vendor pages; record privacy terms; do not endorse without evidence.",
+   "analysis_framework": null,
+   "limitations": "Tools change quickly; hands-on testing is not performed."
+  },
+  {
+   "id": "open-source-technology-monitor",
+   "name": "Open-Source Technology Monitor",
+   "category": "Technology & AI Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Monitor releases and trends in chosen open-source technologies.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "project",
+     "type": "string"
+    },
+    {
+     "name": "version",
+     "type": "string"
+    },
+    {
+     "name": "release_date",
+     "type": "string"
+    },
+    {
+     "name": "notable_changes",
+     "type": "string"
+    },
+    {
+     "name": "breaking_changes",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "project repositories",
+     "release notes",
+     "maintainer blogs"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Read release notes at the source; flag breaking changes; do not assert adoption without data.",
+   "analysis_framework": null,
+   "limitations": "Not a security audit."
+  },
+  {
+   "id": "developer-ecosystem-monitor",
+   "name": "Developer Ecosystem Monitor",
+   "category": "Technology & AI Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track developer tooling, frameworks, communities and platform changes.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "item",
+     "type": "string"
+    },
+    {
+     "name": "ecosystem",
+     "type": "string"
+    },
+    {
+     "name": "change",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "impact_note",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "platform changelogs",
+     "developer surveys",
+     "community discussions"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Distinguish official announcements from community opinion; cite survey methodology where used.",
+   "analysis_framework": null,
+   "limitations": "Survey results reflect their respondents."
+  },
+  {
+   "id": "emerging-technology-radar",
+   "name": "Emerging Technology Radar",
+   "category": "Technology & AI Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track emerging technologies and classify them by readiness for the owner's context.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "technology",
+     "type": "string"
+    },
+    {
+     "name": "readiness_estimate",
+     "type": "string"
+    },
+    {
+     "name": "use_cases",
+     "type": "string"
+    },
+    {
+     "name": "risks",
+     "type": "string"
+    },
+    {
+     "name": "evidence",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "research news",
+     "standards bodies",
+     "industry reports"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Label readiness as an estimate with rationale; avoid hype.",
+   "analysis_framework": null,
+   "limitations": "Estimates are subjective."
+  },
+  {
+   "id": "ai-workflow-research",
+   "name": "AI Workflow Research",
+   "category": "Technology & AI Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Research and document practical AI workflows for a given job.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "workflow",
+     "type": "string"
+    },
+    {
+     "name": "steps",
+     "type": "string"
+    },
+    {
+     "name": "tools_involved",
+     "type": "string"
+    },
+    {
+     "name": "reported_results",
+     "type": "string"
+    },
+    {
+     "name": "limitations",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "practitioner write-ups",
+     "tool docs",
+     "case studies"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Separate reported results from tested ones; note data-privacy considerations.",
+   "analysis_framework": "Separate reported results from tested ones; note data-privacy considerations.",
+   "limitations": "Reported results may not generalise."
+  },
+  {
+   "id": "cybersecurity-developments-monitor",
+   "name": "Cybersecurity Developments Monitor",
+   "category": "Technology & AI Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track vulnerabilities, advisories and threat developments relevant to the owner's stack.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "advisory_id",
+     "type": "string"
+    },
+    {
+     "name": "affected_products",
+     "type": "string"
+    },
+    {
+     "name": "severity_as_published",
+     "type": "string"
+    },
+    {
+     "name": "published_at",
+     "type": "string"
+    },
+    {
+     "name": "mitigation_summary",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "vendor security advisories",
+     "national CERT pages",
+     "reputable security news"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Report severity as published by the source; link advisories; never provide exploit instructions; recommend patching via official guidance.",
+   "analysis_framework": null,
+   "limitations": "Not a substitute for a security team; no scanning of owner systems."
+  },
+  {
+   "id": "software-release-monitor",
+   "name": "Software Release Monitor",
+   "category": "Technology & AI Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track releases of software the owner depends on.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "software",
+     "type": "string"
+    },
+    {
+     "name": "version",
+     "type": "string"
+    },
+    {
+     "name": "release_date",
+     "type": "string"
+    },
+    {
+     "name": "highlights",
+     "type": "string"
+    },
+    {
+     "name": "breaking_changes",
+     "type": "string"
+    },
+    {
+     "name": "end_of_life_dates",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "release pages",
+     "changelogs",
+     "package registries"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Use official release pages; record EOL from the vendor only.",
+   "analysis_framework": null,
+   "limitations": "Not an update installer."
+  },
+  {
+   "id": "technical-standards-monitor",
+   "name": "Technical Standards Monitor",
+   "category": "Technology & AI Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track changes to technical standards and specifications.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "standard",
+     "type": "string"
+    },
+    {
+     "name": "status",
+     "type": "string"
+    },
+    {
+     "name": "version",
+     "type": "string"
+    },
+    {
+     "name": "change_summary",
+     "type": "string"
+    },
+    {
+     "name": "effective_date",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "standards body pages",
+     "working-group drafts"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Cite the standards body; note draft vs published status.",
+   "analysis_framework": null,
+   "limitations": "Access to full texts may be paid."
+  },
+  {
+   "id": "technology-adoption-tracker",
+   "name": "Technology Adoption Tracker",
+   "category": "Technology & AI Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track the owner's own technology adoption decisions and outcomes.",
+   "modes": [
+    "tracking",
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "technology",
+     "type": "string"
+    },
+    {
+     "name": "decision",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "rationale",
+     "type": "string"
+    },
+    {
+     "name": "outcome_note",
+     "type": "string"
+    },
+    {
+     "name": "review_date",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Record decisions and outcomes; analyse patterns across entries only.",
+   "limitations": "Reflects the owner's records only."
+  },
+  {
+   "id": "research-paper-finder",
+   "name": "Research Paper Finder",
+   "category": "Research & Knowledge",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find relevant research papers for a topic.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "title",
+     "type": "string"
+    },
+    {
+     "name": "authors",
+     "type": "string"
+    },
+    {
+     "name": "venue",
+     "type": "string"
+    },
+    {
+     "name": "year",
+     "type": "string"
+    },
+    {
+     "name": "doi_or_url",
+     "type": "string"
+    },
+    {
+     "name": "abstract_summary",
+     "type": "string"
+    },
+    {
+     "name": "peer_review_status",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "scholarly indexes",
+     "preprint servers",
+     "publisher pages",
+     "institutional repositories"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Record peer-review status; do not describe a preprint as peer-reviewed; verify bibliographic details at the source; never fabricate citations.",
+   "analysis_framework": null,
+   "limitations": "Paywalls limit access; coverage varies."
+  },
+  {
+   "id": "literature-review-assistant",
+   "name": "Literature Review Assistant",
+   "category": "Research & Knowledge",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Organise and synthesise a set of papers into a structured review.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "paper_id",
+     "type": "string"
+    },
+    {
+     "name": "research_question",
+     "type": "string"
+    },
+    {
+     "name": "method",
+     "type": "string"
+    },
+    {
+     "name": "sample",
+     "type": "string"
+    },
+    {
+     "name": "findings",
+     "type": "string"
+    },
+    {
+     "name": "limitations",
+     "type": "string"
+    },
+    {
+     "name": "theme",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": "Extract only what the paper states; cluster by theme; flag disagreements between papers.",
+   "analysis_framework": "Extract only what the paper states; cluster by theme; flag disagreements between papers.",
+   "limitations": "Depends on access to full text; not a systematic review unless protocol is followed."
+  },
+  {
+   "id": "research-topic-monitor",
+   "name": "Research Topic Monitor",
+   "category": "Research & Knowledge",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Watch for new work on chosen topics.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "topic",
+     "type": "string"
+    },
+    {
+     "name": "item",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "type",
+     "type": "string"
+    },
+    {
+     "name": "why_relevant",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "scholarly indexes",
+     "preprint servers",
+     "conference listings"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Dedupe against stored items; report new vs updated.",
+   "analysis_framework": null,
+   "limitations": "Preprints are unreviewed."
+  },
+  {
+   "id": "knowledge-library",
+   "name": "Knowledge Library",
+   "category": "Research & Knowledge",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Store and organise the owner's notes, links and documents.",
+   "modes": [
+    "tracking"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "item_id",
+     "type": "string"
+    },
+    {
+     "name": "title",
+     "type": "string"
+    },
+    {
+     "name": "type",
+     "type": "string"
+    },
+    {
+     "name": "tags",
+     "type": "string"
+    },
+    {
+     "name": "source",
+     "type": "string"
+    },
+    {
+     "name": "added_at",
+     "type": "string"
+    },
+    {
+     "name": "notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": null,
+   "limitations": "Storage is the state pack, not a cloud drive."
+  },
+  {
+   "id": "research-progress-tracker",
+   "name": "Research Progress Tracker",
+   "category": "Research & Knowledge",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track milestones, tasks and outputs of a research project.",
+   "modes": [
+    "tracking",
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "milestone",
+     "type": "string"
+    },
+    {
+     "name": "status",
+     "type": "string"
+    },
+    {
+     "name": "due",
+     "type": "string"
+    },
+    {
+     "name": "evidence_link",
+     "type": "string"
+    },
+    {
+     "name": "notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Compute progress from recorded milestones; show blockers.",
+   "limitations": "Progress is as recorded."
+  },
+  {
+   "id": "evidence-comparison-agent",
+   "name": "Evidence Comparison Agent",
+   "category": "Research & Knowledge",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Compare evidence across sources on a claim.",
+   "modes": [
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "claim",
+     "type": "string"
+    },
+    {
+     "name": "source",
+     "type": "string"
+    },
+    {
+     "name": "evidence_type",
+     "type": "string"
+    },
+    {
+     "name": "strength_rationale",
+     "type": "string"
+    },
+    {
+     "name": "agreement",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Grade each source type; present agreement and disagreement; give a bounded conclusion.",
+   "limitations": "Evidence grading is judgment."
+  },
+  {
+   "id": "expert-commentary-monitor",
+   "name": "Expert Commentary Monitor",
+   "category": "Research & Knowledge",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track what named experts publish or say on topics.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "expert",
+     "type": "string"
+    },
+    {
+     "name": "topic",
+     "type": "string"
+    },
+    {
+     "name": "statement_summary",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "medium",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "expert blogs",
+     "interviews",
+     "talks",
+     "verified profiles"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Attribute precisely; paraphrase; avoid attributing unsourced quotes.",
+   "analysis_framework": null,
+   "limitations": "Cannot verify authenticity of every channel."
+  },
+  {
+   "id": "research-gap-finder",
+   "name": "Research Gap Finder",
+   "category": "Research & Knowledge",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Identify gaps and open questions in a body of research.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "gap",
+     "type": "string"
+    },
+    {
+     "name": "evidence_of_gap",
+     "type": "string"
+    },
+    {
+     "name": "adjacent_work",
+     "type": "string"
+    },
+    {
+     "name": "feasibility_note",
+     "type": "string"
+    },
+    {
+     "name": "confidence",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": "Show the search that supports the gap claim; label as hypothesis.",
+   "analysis_framework": "Show the search that supports the gap claim; label as hypothesis.",
+   "limitations": "Absence of search hits is not proof of absence."
+  },
+  {
+   "id": "reading-tracker",
+   "name": "Reading Tracker",
+   "category": "Research & Knowledge",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Log reading progress.",
+   "modes": [
+    "tracking"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "title",
+     "type": "string"
+    },
+    {
+     "name": "author",
+     "type": "string"
+    },
+    {
+     "name": "status",
+     "type": "string"
+    },
+    {
+     "name": "pages_or_percent",
+     "type": "string"
+    },
+    {
+     "name": "started_on",
+     "type": "string"
+    },
+    {
+     "name": "finished_on",
+     "type": "string"
+    },
+    {
+     "name": "notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": null,
+   "limitations": "None beyond data entered."
+  },
+  {
+   "id": "research-report-generator",
+   "name": "Research Report Generator",
+   "category": "Research & Knowledge",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Produce a structured research report from approved records.",
+   "modes": [
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "section",
+     "type": "string"
+    },
+    {
+     "name": "claims",
+     "type": "string"
+    },
+    {
+     "name": "evidence_links",
+     "type": "string"
+    },
+    {
+     "name": "confidence",
+     "type": "string"
+    },
+    {
+     "name": "gaps",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Every claim linked to a record; separate findings from interpretation; list limitations.",
+   "limitations": "Quality bounded by the records."
+  },
+  {
+   "id": "grant-finder",
+   "name": "Grant Finder",
+   "category": "Funding & Financial Support",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find grants matching the owner's organisation, purpose and location.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "grant",
+     "type": "string"
+    },
+    {
+     "name": "funder",
+     "type": "string"
+    },
+    {
+     "name": "purpose",
+     "type": "string"
+    },
+    {
+     "name": "amount_range",
+     "type": "string"
+    },
+    {
+     "name": "eligibility",
+     "type": "string"
+    },
+    {
+     "name": "deadline",
+     "type": "string"
+    },
+    {
+     "name": "match_required",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "funder websites",
+     "government portals",
+     "foundation databases"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Verify eligibility and deadline on the funder's page; flag aggregator-only listings as unverified.",
+   "analysis_framework": null,
+   "limitations": "Eligibility interpretation needs owner review; competitiveness unknown."
+  },
+  {
+   "id": "startup-funding-finder",
+   "name": "Startup Funding Finder",
+   "category": "Funding & Financial Support",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find funding programmes for startups: accelerators, grants, competitions, funds.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "programme",
+     "type": "string"
+    },
+    {
+     "name": "provider",
+     "type": "string"
+    },
+    {
+     "name": "stage_focus",
+     "type": "string"
+    },
+    {
+     "name": "terms_if_disclosed",
+     "type": "string"
+    },
+    {
+     "name": "equity_or_non_dilutive",
+     "type": "string"
+    },
+    {
+     "name": "deadline",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "accelerator pages",
+     "investor programme pages",
+     "government schemes"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "State whether terms (equity, fees) are disclosed; never recommend giving equity without owner's decision.",
+   "analysis_framework": null,
+   "limitations": "Terms often negotiable and undisclosed."
+  },
+  {
+   "id": "business-support-finder",
+   "name": "Business Support Finder",
+   "category": "Funding & Financial Support",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find non-financial and financial business support: mentoring, training, services.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "programme",
+     "type": "string"
+    },
+    {
+     "name": "provider",
+     "type": "string"
+    },
+    {
+     "name": "support_type",
+     "type": "string"
+    },
+    {
+     "name": "eligibility",
+     "type": "string"
+    },
+    {
+     "name": "cost",
+     "type": "string"
+    },
+    {
+     "name": "deadline",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "government and enterprise agency pages",
+     "chambers",
+     "support programmes"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Confirm on provider page; note region limits.",
+   "analysis_framework": null,
+   "limitations": "Availability varies by region and year."
+  },
+  {
+   "id": "public-funding-monitor",
+   "name": "Public Funding Monitor",
+   "category": "Funding & Financial Support",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Monitor public funding calls and budgets relevant to the owner.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "call",
+     "type": "string"
+    },
+    {
+     "name": "authority",
+     "type": "string"
+    },
+    {
+     "name": "amount",
+     "type": "string"
+    },
+    {
+     "name": "eligibility",
+     "type": "string"
+    },
+    {
+     "name": "deadline",
+     "type": "string"
+    },
+    {
+     "name": "status",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "official gazettes",
+     "ministry and agency portals",
+     "procurement notices"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Use official sources only; mark unofficial reports as unverified.",
+   "analysis_framework": null,
+   "limitations": "Language and portal access vary."
+  },
+  {
+   "id": "competition-prize-finder",
+   "name": "Competition & Prize Finder",
+   "category": "Funding & Financial Support",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find competitions and prizes the owner could enter.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "competition",
+     "type": "string"
+    },
+    {
+     "name": "organiser",
+     "type": "string"
+    },
+    {
+     "name": "theme",
+     "type": "string"
+    },
+    {
+     "name": "prize_if_disclosed",
+     "type": "string"
+    },
+    {
+     "name": "eligibility",
+     "type": "string"
+    },
+    {
+     "name": "deadline",
+     "type": "string"
+    },
+    {
+     "name": "rules_url",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "organiser pages",
+     "sponsor announcements",
+     "platforms"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Read rules for IP and eligibility; flag entry fees.",
+   "analysis_framework": null,
+   "limitations": "Prize payout cannot be verified."
+  },
+  {
+   "id": "research-funding-finder",
+   "name": "Research Funding Finder",
+   "category": "Funding & Financial Support",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find research funding opportunities.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "call",
+     "type": "string"
+    },
+    {
+     "name": "funder",
+     "type": "string"
+    },
+    {
+     "name": "field",
+     "type": "string"
+    },
+    {
+     "name": "amount",
+     "type": "string"
+    },
+    {
+     "name": "eligibility",
+     "type": "string"
+    },
+    {
+     "name": "deadline",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "funder pages",
+     "university research offices",
+     "grant databases"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "As Grant Finder; record eligibility by applicant type.",
+   "analysis_framework": null,
+   "limitations": "Calls are cyclical."
+  },
+  {
+   "id": "investor-intelligence",
+   "name": "Investor Intelligence",
+   "category": "Funding & Financial Support",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Research investors relevant to the owner's stage and sector from public information.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "investor",
+     "type": "string"
+    },
+    {
+     "name": "stage_focus",
+     "type": "string"
+    },
+    {
+     "name": "sector_focus",
+     "type": "string"
+    },
+    {
+     "name": "typical_cheque_if_public",
+     "type": "string"
+    },
+    {
+     "name": "portfolio_examples",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "investor sites",
+     "portfolio pages",
+     "public announcements",
+     "databases"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Use public data only; separate stated thesis from inferred patterns; no private contact scraping.",
+   "analysis_framework": null,
+   "limitations": "Public portfolios are incomplete; cheque sizes often estimates."
+  },
+  {
+   "id": "funding-deadline-tracker",
+   "name": "Funding Deadline Tracker",
+   "category": "Funding & Financial Support",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track funding application deadlines the owner is pursuing.",
+   "modes": [
+    "tracking"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "item",
+     "type": "string"
+    },
+    {
+     "name": "funder",
+     "type": "string"
+    },
+    {
+     "name": "deadline",
+     "type": "string"
+    },
+    {
+     "name": "status",
+     "type": "string"
+    },
+    {
+     "name": "materials_needed",
+     "type": "string"
+    },
+    {
+     "name": "owner",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": null,
+   "limitations": "Reminders only if a real scheduler exists."
+  },
+  {
+   "id": "personal-finance-tracker",
+   "name": "Personal Finance Tracker",
+   "category": "Funding & Financial Support",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track income, spending, savings and debts entered by the owner.",
+   "modes": [
+    "tracking",
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "amount",
+     "type": "string"
+    },
+    {
+     "name": "currency",
+     "type": "string"
+    },
+    {
+     "name": "category",
+     "type": "string"
+    },
+    {
+     "name": "occurred_at",
+     "type": "string"
+    },
+    {
+     "name": "account_label",
+     "type": "string"
+    },
+    {
+     "name": "notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Deterministic summaries by period and category; never sum mixed currencies.",
+   "limitations": "Not financial, tax or investment advice; do not store account numbers."
+  },
+  {
+   "id": "funding-eligibility-analyst",
+   "name": "Funding Eligibility Analyst",
+   "category": "Funding & Financial Support",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Assess likely fit between the owner profile and funding opportunities.",
+   "modes": [
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "opportunity_id",
+     "type": "string"
+    },
+    {
+     "name": "criteria",
+     "type": "string"
+    },
+    {
+     "name": "owner_status_per_criterion",
+     "type": "string"
+    },
+    {
+     "name": "fit_assessment",
+     "type": "string"
+    },
+    {
+     "name": "gaps",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Check criterion by criterion; mark unknowns; no guarantees of award.",
+   "limitations": "Final eligibility is decided by the funder."
+  },
+  {
+   "id": "industry-news-monitor",
+   "name": "Industry News Monitor",
+   "category": "Market & Industry Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track news in the owner's industry.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "headline_summary",
+     "type": "string"
+    },
+    {
+     "name": "publisher",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "relevance",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "trade publications",
+     "press",
+     "company newsrooms"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Dedupe syndicated stories; prefer primary reporting.",
+   "analysis_framework": null,
+   "limitations": "Paywalls and region blocks."
+  },
+  {
+   "id": "market-trend-analyst",
+   "name": "Market Trend Analyst",
+   "category": "Market & Industry Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Identify and assess market trends with evidence.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "trend",
+     "type": "string"
+    },
+    {
+     "name": "direction",
+     "type": "string"
+    },
+    {
+     "name": "evidence",
+     "type": "string"
+    },
+    {
+     "name": "time_window",
+     "type": "string"
+    },
+    {
+     "name": "strength_rationale",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "industry reports with disclosed methodology",
+     "public datasets",
+     "news"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Show data behind each trend; distinguish short-term noise from sustained change; state uncertainty.",
+   "analysis_framework": "Show data behind each trend; distinguish short-term noise from sustained change; state uncertainty.",
+   "limitations": "Forecasts are not guarantees."
+  },
+  {
+   "id": "regulatory-change-monitor",
+   "name": "Regulatory Change Monitor",
+   "category": "Market & Industry Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track regulation and policy changes affecting the owner.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "instrument",
+     "type": "string"
+    },
+    {
+     "name": "jurisdiction",
+     "type": "string"
+    },
+    {
+     "name": "change",
+     "type": "string"
+    },
+    {
+     "name": "effective_date",
+     "type": "string"
+    },
+    {
+     "name": "affected_area",
+     "type": "string"
+    },
+    {
+     "name": "status",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "regulator sites",
+     "official gazettes",
+     "legal updates from credible publishers"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Use official texts; note draft vs in force; no legal advice.",
+   "analysis_framework": null,
+   "limitations": "Not legal advice; local counsel should confirm."
+  },
+  {
+   "id": "market-entry-research",
+   "name": "Market Entry Research",
+   "category": "Market & Industry Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Research a new market: size signals, regulation, competitors, customers, channels.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "market",
+     "type": "string"
+    },
+    {
+     "name": "segment",
+     "type": "string"
+    },
+    {
+     "name": "size_signal_with_source",
+     "type": "string"
+    },
+    {
+     "name": "regulation",
+     "type": "string"
+    },
+    {
+     "name": "competitors",
+     "type": "string"
+    },
+    {
+     "name": "channels",
+     "type": "string"
+    },
+    {
+     "name": "risks",
+     "type": "string"
+    },
+    {
+     "name": "confidence",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "public statistics",
+     "trade bodies",
+     "competitor sites",
+     "regulator pages"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Label size figures as sourced estimates; list what is unknown.",
+   "analysis_framework": "Label size figures as sourced estimates; list what is unknown.",
+   "limitations": "Public data is limited in many markets."
+  },
+  {
+   "id": "demand-signal-monitor",
+   "name": "Demand Signal Monitor",
+   "category": "Market & Industry Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Watch signals of demand: search interest, discussion, listings, hiring.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "signal",
+     "type": "string"
+    },
+    {
+     "name": "topic",
+     "type": "string"
+    },
+    {
+     "name": "observed_change",
+     "type": "string"
+    },
+    {
+     "name": "period",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "public trend tools",
+     "communities",
+     "marketplaces"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Report observed indicators only; avoid converting to volumes unless sourced.",
+   "analysis_framework": null,
+   "limitations": "Indicators are proxies."
+  },
+  {
+   "id": "pricing-cost-monitor",
+   "name": "Pricing & Cost Monitor",
+   "category": "Market & Industry Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track prices and input costs for goods and services the owner cares about.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "item",
+     "type": "string"
+    },
+    {
+     "name": "price",
+     "type": "string"
+    },
+    {
+     "name": "currency",
+     "type": "string"
+    },
+    {
+     "name": "unit",
+     "type": "string"
+    },
+    {
+     "name": "location",
+     "type": "string"
+    },
+    {
+     "name": "captured_on",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "retail and wholesale listings",
+     "commodity indexes",
+     "official statistics"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Record date, unit and location; do not compare unlike units.",
+   "analysis_framework": null,
+   "limitations": "Prices vary by location and time."
+  },
+  {
+   "id": "supply-chain-intelligence",
+   "name": "Supply Chain Intelligence",
+   "category": "Market & Industry Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Monitor supply-chain developments affecting the owner.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "development",
+     "type": "string"
+    },
+    {
+     "name": "affected_routes_or_goods",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "severity_rationale",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "logistics news",
+     "port and customs notices",
+     "supplier announcements"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Distinguish confirmed disruptions from rumour; avoid forecasting delays without evidence.",
+   "analysis_framework": null,
+   "limitations": "Real-time tracking is not provided."
+  },
+  {
+   "id": "real-estate-intelligence",
+   "name": "Real Estate Intelligence",
+   "category": "Market & Industry Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Research property markets from public listings and data.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "property_or_area",
+     "type": "string"
+    },
+    {
+     "name": "listing_price",
+     "type": "string"
+    },
+    {
+     "name": "currency",
+     "type": "string"
+    },
+    {
+     "name": "size",
+     "type": "string"
+    },
+    {
+     "name": "location",
+     "type": "string"
+    },
+    {
+     "name": "listed_on",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "public listings",
+     "official registries",
+     "market reports"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Compare like-for-like; flag stale listings and unverified claims.",
+   "analysis_framework": "Compare like-for-like; flag stale listings and unverified claims.",
+   "limitations": "Not valuation or investment advice."
+  },
+  {
+   "id": "industry-benchmarking",
+   "name": "Industry Benchmarking",
+   "category": "Market & Industry Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Benchmark the owner against industry norms where sourced.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "metric",
+     "type": "string"
+    },
+    {
+     "name": "own_value",
+     "type": "string"
+    },
+    {
+     "name": "benchmark_value_with_source",
+     "type": "string"
+    },
+    {
+     "name": "definition_notes",
+     "type": "string"
+    },
+    {
+     "name": "comparability_caveat",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "public reports",
+     "filings",
+     "industry bodies"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Check definitions match; state comparability limits.",
+   "analysis_framework": "Check definitions match; state comparability limits.",
+   "limitations": "Benchmarks rarely match the owner's context exactly."
+  },
+  {
+   "id": "market-risk-monitor",
+   "name": "Market Risk Monitor",
+   "category": "Market & Industry Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Watch market-level risks: macro, currency, sector shocks.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "risk",
+     "type": "string"
+    },
+    {
+     "name": "indicator",
+     "type": "string"
+    },
+    {
+     "name": "change",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "implication_note",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "central bank and statistics sites",
+     "reputable news"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Report indicator data from official sources; keep implications labelled as interpretation.",
+   "analysis_framework": null,
+   "limitations": "No predictions or investment advice."
+  },
+  {
+   "id": "expert-finder",
+   "name": "Expert Finder",
+   "category": "People & Network Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find experts on a topic from public professional information.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "name",
+     "type": "string"
+    },
+    {
+     "name": "affiliation",
+     "type": "string"
+    },
+    {
+     "name": "expertise_evidence",
+     "type": "string"
+    },
+    {
+     "name": "public_contact_route",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "publications",
+     "conference speaker lists",
+     "institutional profiles"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Use public professional information only; no scraping of private details; verify affiliation.",
+   "analysis_framework": null,
+   "limitations": "Public information only; no endorsement."
+  },
+  {
+   "id": "founder-investor-monitor",
+   "name": "Founder & Investor Monitor",
+   "category": "People & Network Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track public announcements of founders and investors of interest.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "person_or_org",
+     "type": "string"
+    },
+    {
+     "name": "announcement",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "press",
+     "company blogs",
+     "official social accounts"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Public statements only; avoid speculation on private matters.",
+   "analysis_framework": null,
+   "limitations": "Excludes private personal information."
+  },
+  {
+   "id": "professional-network-opportunities",
+   "name": "Professional Network Opportunities",
+   "category": "People & Network Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find communities, groups and introductions routes for professional networking.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "group",
+     "type": "string"
+    },
+    {
+     "name": "focus",
+     "type": "string"
+    },
+    {
+     "name": "membership_terms",
+     "type": "string"
+    },
+    {
+     "name": "location_remote",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "professional associations",
+     "community directories",
+     "events"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Verify the group exists and terms; no unsolicited messaging.",
+   "analysis_framework": null,
+   "limitations": "Does not send messages."
+  },
+  {
+   "id": "mentor-finder",
+   "name": "Mentor Finder",
+   "category": "People & Network Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find mentorship programmes and potential mentors via public routes.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "programme_or_person",
+     "type": "string"
+    },
+    {
+     "name": "focus",
+     "type": "string"
+    },
+    {
+     "name": "terms",
+     "type": "string"
+    },
+    {
+     "name": "how_to_apply",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "mentorship platforms",
+     "programme pages",
+     "alumni networks"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Prefer structured programmes; note fees; avoid contacting individuals without owner approval.",
+   "analysis_framework": null,
+   "limitations": "Fit and availability unknowable."
+  },
+  {
+   "id": "speaker-contributor-opportunities",
+   "name": "Speaker & Contributor Opportunities",
+   "category": "People & Network Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find calls for speakers, authors and contributors.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "venue",
+     "type": "string"
+    },
+    {
+     "name": "topic_fit",
+     "type": "string"
+    },
+    {
+     "name": "deadline",
+     "type": "string"
+    },
+    {
+     "name": "compensation_if_disclosed",
+     "type": "string"
+    },
+    {
+     "name": "requirements",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "conference CFP pages",
+     "publication submission pages"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Confirm CFP deadline on the organiser page.",
+   "analysis_framework": null,
+   "limitations": "Acceptance not predictable."
+  },
+  {
+   "id": "organisation-people-tracker",
+   "name": "Organisation People Tracker",
+   "category": "People & Network Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track people within an organisation: roles, teams, responsibilities (owner-entered).",
+   "modes": [
+    "tracking"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "person_ref",
+     "type": "string"
+    },
+    {
+     "name": "role",
+     "type": "string"
+    },
+    {
+     "name": "team",
+     "type": "string"
+    },
+    {
+     "name": "start",
+     "type": "string"
+    },
+    {
+     "name": "notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": null,
+   "limitations": "Handle personal data carefully; not HR advice."
+  },
+  {
+   "id": "influencer-creator-intelligence",
+   "name": "Influencer/Creator Intelligence",
+   "category": "People & Network Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Research creators relevant to the owner's niche from public data.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "creator",
+     "type": "string"
+    },
+    {
+     "name": "platform",
+     "type": "string"
+    },
+    {
+     "name": "niche",
+     "type": "string"
+    },
+    {
+     "name": "audience_size_as_displayed",
+     "type": "string"
+    },
+    {
+     "name": "content_themes",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "public creator profiles",
+     "platform pages"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Label audience numbers as displayed, unaudited; no fraud accusations without evidence.",
+   "analysis_framework": "Label audience numbers as displayed, unaudited; no fraud accusations without evidence.",
+   "limitations": "Metrics can be inflated."
+  },
+  {
+   "id": "community-member-directory",
+   "name": "Community Member Directory",
+   "category": "People & Network Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Maintain a directory of community members the owner supplies.",
+   "modes": [
+    "tracking"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "member_ref",
+     "type": "string"
+    },
+    {
+     "name": "role",
+     "type": "string"
+    },
+    {
+     "name": "interests",
+     "type": "string"
+    },
+    {
+     "name": "joined_on",
+     "type": "string"
+    },
+    {
+     "name": "consent_note",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": null,
+   "limitations": "Privacy obligations on the owner."
+  },
+  {
+   "id": "relationship-follow-up-tracker",
+   "name": "Relationship Follow-up Tracker",
+   "category": "People & Network Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track follow-ups with contacts.",
+   "modes": [
+    "tracking"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "contact_ref",
+     "type": "string"
+    },
+    {
+     "name": "last_contact",
+     "type": "string"
+    },
+    {
+     "name": "next_step",
+     "type": "string"
+    },
+    {
+     "name": "due",
+     "type": "string"
+    },
+    {
+     "name": "notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": null,
+   "limitations": "No reminders unless a real mechanism exists; does not send messages."
+  },
+  {
+   "id": "talent-intelligence",
+   "name": "Talent Intelligence",
+   "category": "People & Network Intelligence",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Research talent pools and hiring signals for the owner's roles.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "role",
+     "type": "string"
+    },
+    {
+     "name": "market_signal",
+     "type": "string"
+    },
+    {
+     "name": "skills_trend",
+     "type": "string"
+    },
+    {
+     "name": "location",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "job and talent market data",
+     "professional communities",
+     "publications"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Use aggregate public signals; avoid profiling individuals.",
+   "analysis_framework": null,
+   "limitations": "Aggregate data only."
+  },
+  {
+   "id": "conference-finder",
+   "name": "Conference Finder",
+   "category": "Events & Communities",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find conferences by topic, location and date.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "event",
+     "type": "string"
+    },
+    {
+     "name": "dates",
+     "type": "string"
+    },
+    {
+     "name": "location_or_online",
+     "type": "string"
+    },
+    {
+     "name": "topics",
+     "type": "string"
+    },
+    {
+     "name": "ticket_price_if_public",
+     "type": "string"
+    },
+    {
+     "name": "cfp_deadline",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "organiser sites",
+     "event directories"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Confirm dates on the organiser site; flag cancelled or unverified events.",
+   "analysis_framework": null,
+   "limitations": "Events change; pricing may be partial."
+  },
+  {
+   "id": "webinar-finder",
+   "name": "Webinar Finder",
+   "category": "Events & Communities",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find webinars on chosen topics.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "title",
+     "type": "string"
+    },
+    {
+     "name": "host",
+     "type": "string"
+    },
+    {
+     "name": "datetime_with_timezone",
+     "type": "string"
+    },
+    {
+     "name": "registration_url",
+     "type": "string"
+    },
+    {
+     "name": "cost",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "platform listings",
+     "organiser pages"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Record time zone clearly.",
+   "analysis_framework": null,
+   "limitations": "Time and access may change."
+  },
+  {
+   "id": "meetup-finder",
+   "name": "Meetup Finder",
+   "category": "Events & Communities",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find meetups near the owner or online.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "group",
+     "type": "string"
+    },
+    {
+     "name": "next_event",
+     "type": "string"
+    },
+    {
+     "name": "location",
+     "type": "string"
+    },
+    {
+     "name": "frequency",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "meetup platforms",
+     "community pages"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Use the owner's approved location preference.",
+   "analysis_framework": null,
+   "limitations": "Location precision depends on supplied preference."
+  },
+  {
+   "id": "community-discovery",
+   "name": "Community Discovery",
+   "category": "Events & Communities",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Discover online and local communities aligned with the owner's interests.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "community",
+     "type": "string"
+    },
+    {
+     "name": "platform",
+     "type": "string"
+    },
+    {
+     "name": "size_as_displayed",
+     "type": "string"
+    },
+    {
+     "name": "activity_signal",
+     "type": "string"
+    },
+    {
+     "name": "rules_note",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "platform directories",
+     "forums",
+     "community lists"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Assess activity from visible recency; avoid joining on the owner's behalf.",
+   "analysis_framework": null,
+   "limitations": "Activity is approximate."
+  },
+  {
+   "id": "hackathon-calendar",
+   "name": "Hackathon Calendar",
+   "category": "Events & Communities",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Maintain a calendar of hackathons the owner follows.",
+   "modes": [
+    "tracking",
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "event",
+     "type": "string"
+    },
+    {
+     "name": "dates",
+     "type": "string"
+    },
+    {
+     "name": "status",
+     "type": "string"
+    },
+    {
+     "name": "team",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "hackathon platforms",
+     "owner-entered"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Merge discovered and owner-added; keep user edits.",
+   "analysis_framework": null,
+   "limitations": "Dates may change."
+  },
+  {
+   "id": "industry-exhibition-finder",
+   "name": "Industry Exhibition Finder",
+   "category": "Events & Communities",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find trade shows and exhibitions.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "event",
+     "type": "string"
+    },
+    {
+     "name": "venue",
+     "type": "string"
+    },
+    {
+     "name": "dates",
+     "type": "string"
+    },
+    {
+     "name": "sector",
+     "type": "string"
+    },
+    {
+     "name": "visitor_registration_terms",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "exhibition organiser pages",
+     "trade bodies"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Confirm with organiser; note costs.",
+   "analysis_framework": null,
+   "limitations": "Prices vary."
+  },
+  {
+   "id": "competition-calendar",
+   "name": "Competition Calendar",
+   "category": "Events & Communities",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Calendar of competitions the owner follows.",
+   "modes": [
+    "tracking",
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "competition",
+     "type": "string"
+    },
+    {
+     "name": "deadline",
+     "type": "string"
+    },
+    {
+     "name": "status",
+     "type": "string"
+    },
+    {
+     "name": "materials",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "organiser pages",
+     "owner-entered"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "As Hackathon Calendar.",
+   "analysis_framework": null,
+   "limitations": "Dates may change."
+  },
+  {
+   "id": "event-deadline-tracker",
+   "name": "Event Deadline Tracker",
+   "category": "Events & Communities",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track event registration and submission deadlines.",
+   "modes": [
+    "tracking"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "event",
+     "type": "string"
+    },
+    {
+     "name": "deadline_type",
+     "type": "string"
+    },
+    {
+     "name": "deadline",
+     "type": "string"
+    },
+    {
+     "name": "status",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": null,
+   "limitations": "No reminders without a real scheduler."
+  },
+  {
+   "id": "event-participation-tracker",
+   "name": "Event Participation Tracker",
+   "category": "Events & Communities",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Log events attended and outcomes.",
+   "modes": [
+    "tracking",
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "event",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "role",
+     "type": "string"
+    },
+    {
+     "name": "outcomes",
+     "type": "string"
+    },
+    {
+     "name": "contacts_made_ref",
+     "type": "string"
+    },
+    {
+     "name": "notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Summarise participation over time.",
+   "limitations": "Only recorded events."
+  },
+  {
+   "id": "community-activity-monitor",
+   "name": "Community Activity Monitor",
+   "category": "Events & Communities",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Observe public activity of chosen communities.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "community",
+     "type": "string"
+    },
+    {
+     "name": "period",
+     "type": "string"
+    },
+    {
+     "name": "activity_observed",
+     "type": "string"
+    },
+    {
+     "name": "notable_threads",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "public community pages and feeds"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Report observations from public pages only; cite recency.",
+   "analysis_framework": "Report observations from public pages only; cite recency.",
+   "limitations": "No private-channel access."
+  },
+  {
+   "id": "learning-path-builder",
+   "name": "Learning Path Builder",
+   "category": "Personal Growth & Learning",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Build a staged learning path toward a stated skill or role.",
+   "modes": [
+    "discovery",
+    "analysis"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "stage",
+     "type": "string"
+    },
+    {
+     "name": "topic",
+     "type": "string"
+    },
+    {
+     "name": "resource",
+     "type": "string"
+    },
+    {
+     "name": "estimated_effort_by_source",
+     "type": "string"
+    },
+    {
+     "name": "prerequisites",
+     "type": "string"
+    },
+    {
+     "name": "checkpoint",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "course catalogues",
+     "syllabi",
+     "credential bodies",
+     "reading lists"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Order by prerequisites; cite resources; effort is an estimate; owner approves the path.",
+   "analysis_framework": "Order by prerequisites; cite resources; effort is an estimate; owner approves the path.",
+   "limitations": "Learning outcomes not guaranteed."
+  },
+  {
+   "id": "skill-gap-analyst",
+   "name": "Skill Gap Analyst",
+   "category": "Personal Growth & Learning",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Compare the owner's skills with a target role or objective.",
+   "modes": [
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "target",
+     "type": "string"
+    },
+    {
+     "name": "required_skill",
+     "type": "string"
+    },
+    {
+     "name": "owner_level_self_reported",
+     "type": "string"
+    },
+    {
+     "name": "evidence",
+     "type": "string"
+    },
+    {
+     "name": "gap_assessment",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Use owner-reported levels; mark unknown; recommend options, not verdicts.",
+   "limitations": "Self-reported levels."
+  },
+  {
+   "id": "course-finder",
+   "name": "Course Finder",
+   "category": "Personal Growth & Learning",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find courses on a topic with cost, level and format.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "course",
+     "type": "string"
+    },
+    {
+     "name": "provider",
+     "type": "string"
+    },
+    {
+     "name": "level",
+     "type": "string"
+    },
+    {
+     "name": "cost",
+     "type": "string"
+    },
+    {
+     "name": "duration",
+     "type": "string"
+    },
+    {
+     "name": "format",
+     "type": "string"
+    },
+    {
+     "name": "accreditation_claim",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "provider pages",
+     "course platforms",
+     "university catalogues"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Verify accreditation claims on the awarding body page.",
+   "analysis_framework": null,
+   "limitations": "Quality cannot be verified."
+  },
+  {
+   "id": "certification-finder",
+   "name": "Certification Finder",
+   "category": "Personal Growth & Learning",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Find certifications and their requirements.",
+   "modes": [
+    "discovery"
+   ],
+   "requires_web_access": true,
+   "inputs": "profile fields and keywords approved by the owner",
+   "data_fields": [
+    {
+     "name": "certification",
+     "type": "string"
+    },
+    {
+     "name": "body",
+     "type": "string"
+    },
+    {
+     "name": "prerequisites",
+     "type": "string"
+    },
+    {
+     "name": "exam_fee",
+     "type": "string"
+    },
+    {
+     "name": "renewal",
+     "type": "string"
+    },
+    {
+     "name": "validity",
+     "type": "string"
+    },
+    {
+     "name": "source_url",
+     "type": "string"
+    }
+   ],
+   "source_directory": {
+    "candidate_source_classes": [
+     "certifying body pages",
+     "exam providers"
+    ],
+    "verification": "availability and access verified per run; owner may add or remove sources"
+   },
+   "research_method": "Always confirm with the certifying body.",
+   "analysis_framework": null,
+   "limitations": "Fees and rules change."
+  },
+  {
+   "id": "study-tracker",
+   "name": "Study Tracker",
+   "category": "Personal Growth & Learning",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Log study sessions.",
+   "modes": [
+    "tracking",
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "subject",
+     "type": "string"
+    },
+    {
+     "name": "duration",
+     "type": "string"
+    },
+    {
+     "name": "unit_minutes",
+     "type": "string"
+    },
+    {
+     "name": "occurred_at",
+     "type": "string"
+    },
+    {
+     "name": "notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Summarise time by subject and period.",
+   "limitations": "Self-reported time."
+  },
+  {
+   "id": "habit-tracker",
+   "name": "Habit Tracker",
+   "category": "Personal Growth & Learning",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track habits and streaks.",
+   "modes": [
+    "tracking",
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "habit",
+     "type": "string"
+    },
+    {
+     "name": "done_bool",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    },
+    {
+     "name": "notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Compute streaks and completion rates from entries; missing days are shown as gaps, not as failures.",
+   "limitations": "Behavioural advice is general only."
+  },
+  {
+   "id": "fitness-activity-tracker",
+   "name": "Fitness & Activity Tracker",
+   "category": "Personal Growth & Learning",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track activity such as steps, runs, workouts.",
+   "modes": [
+    "tracking",
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "activity",
+     "type": "string"
+    },
+    {
+     "name": "value",
+     "type": "string"
+    },
+    {
+     "name": "unit",
+     "type": "string"
+    },
+    {
+     "name": "occurred_at",
+     "type": "string"
+    },
+    {
+     "name": "notes",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Summaries by period; general educational context only; no diagnosis or medical advice.",
+   "limitations": "Not medical advice; devices not read unless connected."
+  },
+  {
+   "id": "expense-tracker",
+   "name": "Expense Tracker",
+   "category": "Personal Growth & Learning",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track expenses by category, currency and date.",
+   "modes": [
+    "tracking",
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "amount",
+     "type": "string"
+    },
+    {
+     "name": "currency",
+     "type": "string"
+    },
+    {
+     "name": "category",
+     "type": "string"
+    },
+    {
+     "name": "occurred_at",
+     "type": "string"
+    },
+    {
+     "name": "merchant_or_note",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Deterministic totals; never combine currencies without a stored rate.",
+   "limitations": "Not financial advice; do not store card numbers."
+  },
+  {
+   "id": "reading-knowledge-tracker",
+   "name": "Reading & Knowledge Tracker",
+   "category": "Personal Growth & Learning",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Track reading and key takeaways.",
+   "modes": [
+    "tracking",
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "title",
+     "type": "string"
+    },
+    {
+     "name": "status",
+     "type": "string"
+    },
+    {
+     "name": "progress",
+     "type": "string"
+    },
+    {
+     "name": "takeaway",
+     "type": "string"
+    },
+    {
+     "name": "date",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Summaries from entries only.",
+   "limitations": "None beyond data entered."
+  },
+  {
+   "id": "personal-productivity-analyst",
+   "name": "Personal Productivity Analyst",
+   "category": "Personal Growth & Learning",
+   "version": "1.0.0",
+   "origin": "catalogue",
+   "objective": "Analyse productivity from the owner's tracked data.",
+   "modes": [
+    "analysis"
+   ],
+   "requires_web_access": false,
+   "inputs": "none (user-entered or from permitted modules)",
+   "data_fields": [
+    {
+     "name": "period",
+     "type": "string"
+    },
+    {
+     "name": "focus_time",
+     "type": "string"
+    },
+    {
+     "name": "completed_actions",
+     "type": "string"
+    },
+    {
+     "name": "patterns",
+     "type": "string"
+    },
+    {
+     "name": "observations",
+     "type": "string"
+    }
+   ],
+   "source_directory": null,
+   "research_method": null,
+   "analysis_framework": "Observations vs interpretations separated; no causal claims from correlations.",
+   "limitations": "Limited by recorded data."
+  }
+ ]
+}

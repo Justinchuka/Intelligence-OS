@@ -1,0 +1,18 @@
+{
+  "_note": "ILLUSTRATIVE EXAMPLE of a custom module definition. Created only after the owner confirms the proposed fields.",
+  "id": "water-intake",
+  "name": "Water Intake",
+  "category": "Custom",
+  "version": "1.0.0",
+  "origin": "custom",
+  "objective": "Log daily water intake so the owner can see weekly patterns.",
+  "modes": ["tracking", "analysis"],
+  "data_fields": [
+    {"name": "value", "type": "number", "unit": "ml"},
+    {"name": "occurred_at", "type": "datetime"},
+    {"name": "notes", "type": "string"}
+  ],
+  "execution": {"depth": "standard", "frequency": "manual"},
+  "permissions": {"profile_fields": [], "reads_modules": [], "external_side_effects": "none"},
+  "limitations": "Educational tracking only; not medical advice. Sensitive (health) by default: excluded from public exports."
+}

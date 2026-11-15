@@ -1,0 +1,24 @@
+{
+ "schema_version": 1,
+ "os_id": "os_202611142245440a87f5",
+ "name": "Crumb & Co Intelligence",
+ "config_version": 5,
+ "updated_at": "2026-11-14T22:45:44+00:00",
+ "record_counts": {
+  "competitor-intelligence": 1,
+  "business-performance-tracker": 3
+ },
+ "files": {
+  "config.json": "a2bf827caa8f629f2409f65e48465ca905eb6897a615643b9169f97b4e40b58c",
+  "records/competitor-intelligence.jsonl": "ec081192ab3c4f1ac7e9210570a8d09138a6f7a2843a8ad2179488269652b4cc",
+  "records/business-performance-tracker.jsonl": "221234d4fe49eed4dca441f9a7f1682f1306fd4a8705b76c65b4ceab20797110",
+  "logs/audit.jsonl": "aca1dc9c3350e7a7e0649d52a9ab0bd7a1ef999ca4930a57443d68c25c7ce070",
+  "logs/runs.jsonl": "54f4d33f0657787d307e5c019ac7a65c86f04a46f38df296049795dc19281e39",
+  "versions/v0004.json": "7e1e94c896bcf202d5c7562410630061309f454a277fd99b2c86fe0de7945973",
+  "versions/v0001.json": "a7f31463c7f42787e3937ddbbcf26a2410dd6d98985e2f7459d865e6336fc2ee",
+  "versions/v0003.json": "130257d8cbc675a4635327524e9f91a40b17938f4907d52719a118ecb36037b4",
+  "versions/v0002.json": "e1d258104c2143381abdb21533de59bd97d7fecb5dcd9a8219c247ef756cf70b",
+  "versions/v0005.json": "36584fbdfa3ef924592f917318b98db8c9aa8b291e53237b64daab460bea9903"
+ },
+ "note": "Portable state pack. Not a database; re-upload at the next session."
+}
